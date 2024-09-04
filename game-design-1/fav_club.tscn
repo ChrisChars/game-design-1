@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs415xqtlrttc"]
+
+[ext_resource type="Script" path="res://fav_club.gd" id="1_gwbft"]
+[ext_resource type="Theme" uid="uid://ddokiauedvbc" path="res://big50font.tres" id="2_y5hrf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7a6cd"]
+font_size = 50
+font_color = Color(0, 0.729412, 1, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="FavClub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gwbft")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 160.0
+offset_right = 896.0
+offset_bottom = 459.0
+label_settings = SubResource("LabelSettings_7a6cd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="butshow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 486.0
+offset_right = 287.0
+offset_bottom = 614.0
+theme = ExtResource("2_y5hrf")
+text = "Show"
+
+[node name="butclear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 486.0
+offset_right = 702.0
+offset_bottom = 614.0
+theme = ExtResource("2_y5hrf")
+text = "Clear"
+
+[node name="butexit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 867.0
+offset_top = 489.0
+offset_right = 1120.0
+offset_bottom = 617.0
+theme = ExtResource("2_y5hrf")
+text = "Exit"
+
+[connection signal="pressed" from="butshow" to="." method="_on_butshow_pressed"]
+[connection signal="pressed" from="butclear" to="." method="_on_butclear_pressed"]
+[connection signal="pressed" from="butexit" to="." method="_on_butexit_pressed"]

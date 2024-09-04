@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjlj8ltmrhmaw"]
+
+[ext_resource type="Script" path="res://hello.gd" id="1_o462q"]
+[ext_resource type="Theme" uid="uid://ddokiauedvbc" path="res://big50font.tres" id="2_xu61w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r1wgo"]
+font_size = 50
+
+[node name="Hello" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o462q")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 72.0
+offset_right = 1091.0
+offset_bottom = 577.0
+text = "Hi bro"
+label_settings = SubResource("LabelSettings_r1wgo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 517.0
+offset_right = 300.0
+offset_bottom = 632.0
+theme = ExtResource("2_xu61w")
+text = "Show"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 513.0
+offset_right = 1103.0
+offset_bottom = 628.0
+theme = ExtResource("2_xu61w")
+text = "Clear"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
