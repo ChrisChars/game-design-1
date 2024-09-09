@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://do1mwbitqr4b7"]
+
+[ext_resource type="Script" path="res://prog_82a.gd" id="1_eunbx"]
+[ext_resource type="Theme" uid="uid://ddokiauedvbc" path="res://big50font.tres" id="2_vdbjn"]
+
+[node name="Prog82a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eunbx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 81.0
+offset_right = 346.0
+offset_bottom = 129.0
+text = "Speed Limit"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 175.0
+offset_right = 330.0
+offset_bottom = 230.0
+text = "Vehicle speed"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 425.0
+offset_right = 330.0
+offset_bottom = 480.0
+text = "Fine:"
+
+[node name="lblFine" type="Label" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 427.0
+offset_right = 819.0
+offset_bottom = 482.0
+text = "$"
+
+[node name="txtLimit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 72.0
+offset_right = 692.0
+offset_bottom = 116.0
+
+[node name="txtSpeed" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 174.0
+offset_right = 688.0
+offset_bottom = 218.0
+
+[node name="btnCalc" type="Button" parent="."]
+offset_left = 19.0
+offset_top = 545.0
+offset_right = 291.0
+offset_bottom = 637.0
+theme = ExtResource("2_vdbjn")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+offset_left = 420.0
+offset_top = 543.0
+offset_right = 692.0
+offset_bottom = 635.0
+theme = ExtResource("2_vdbjn")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+offset_left = 857.0
+offset_top = 538.0
+offset_right = 1129.0
+offset_bottom = 630.0
+theme = ExtResource("2_vdbjn")
+text = "Exit"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
