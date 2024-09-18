@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dneyjji7swq4b"]
+
+[ext_resource type="Script" path="res://prog115a/prog_115a.gd" id="1_pekjb"]
+
+[node name="Prog115a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pekjb")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 498.0
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 513.0
+offset_right = 388.0
+offset_bottom = 628.0
+text = "Calc"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 515.0
+offset_right = 779.0
+offset_bottom = 625.0
+text = "Exit"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 513.0
+offset_right = 1134.0
+offset_bottom = 628.0
+text = "Clear"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
