@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://dauk7m122xadb"]
+
+[ext_resource type="Script" path="res://world1/plt_world_1.gd" id="1_cjrey"]
+[ext_resource type="PackedScene" uid="uid://cvaphj1bpk7nl" path="res://plt_player.tscn" id="2_0wu0q"]
+[ext_resource type="PackedScene" uid="uid://cfw27tjv5v0qv" path="res://draggable.tscn" id="3_avq5p"]
+[ext_resource type="PackedScene" uid="uid://d3ll7wh8xocap" path="res://plt_enemy_rudinn.tscn" id="4_55l5v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0xwh"]
+size = Vector2(43, 4)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kiuch"]
+
+[node name="plt_world1" type="Node2D"]
+script = ExtResource("1_cjrey")
+
+[node name="world" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
+polygon = PackedVector2Array(-182, 7, -184, 440, 1335, 447, 1331, -12, 1134, -7, 1132, 153, 983, 249, 877, 249, 877, 333, 825, 330, 877, 369, 885, 434, 729, 433, 727, 398, 770, 371, 729, 371, 731, 294, 758, 264, 734, 260, 729, 198, 679, 198, 678, 265, 591, 265, 587, 370, 531, 368, 532, 297, 468, 298, 467, 370, 416, 371, 412, 286, 299, 286, 300, 320, 172, 277, 139, 229, 110, 230, 64, 282, 22, 283, 24, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
+
+[node name="startplatform" type="StaticBody2D" parent="."]
+position = Vector2(47, 167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="startplatform"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_m0xwh")
+
+[node name="Sprite2D" type="Sprite2D" parent="startplatform/CollisionShape2D"]
+position = Vector2(-0.999998, -1.90735e-06)
+scale = Vector2(44, 6)
+texture = SubResource("PlaceholderTexture2D_kiuch")
+
+[node name="plt_player" parent="startplatform/CollisionShape2D" instance=ExtResource("2_0wu0q")]
+position = Vector2(-1, -23)
+
+[node name="draggable" parent="." instance=ExtResource("3_avq5p")]
+position = Vector2(82, 173)
+
+[node name="plt_enemy_rudinn" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(386, 276)
+
+[node name="plt_enemy_rudinn2" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(831, 423)
+
+[node name="plt_enemy_rudinn3" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(977, 237)
+
+[node name="plt_enemy_rudinn4" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(774, 422)
+
+[node name="plt_enemy_rudinn5" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(804, 422)
+
+[node name="plt_enemy_rudinn6" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(862, 422)
+
+[node name="plt_enemy_rudinn7" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(745, 422)
+
+[node name="plt_enemy_rudinn8" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(761, 396)
+
+[node name="plt_enemy_rudinn9" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(844, 396)
+
+[node name="plt_enemy_rudinn10" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(788, 396)
+
+[node name="plt_enemy_rudinn11" parent="." instance=ExtResource("4_55l5v")]
+position = Vector2(814, 396)
+
+[node name="draggable2" parent="." instance=ExtResource("3_avq5p")]
+position = Vector2(864, 321)

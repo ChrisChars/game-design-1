@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3ll7wh8xocap"]
+
+[ext_resource type="Script" path="res://plt_enemy_roller.gd" id="1_x6a42"]
+[ext_resource type="Texture2D" uid="uid://behln0gg5whkb" path="res://Rudinn.png" id="2_p7x47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_is6ep"]
+
+[node name="plt_enemy_rudinn" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_x6a42")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_is6ep")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.285714, 0.2875)
+texture = ExtResource("2_p7x47")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

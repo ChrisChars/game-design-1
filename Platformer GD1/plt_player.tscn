@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvaphj1bpk7nl"]
+
+[ext_resource type="Script" path="res://player/plt_player.gd" id="1_tmopq"]
+[ext_resource type="Texture2D" uid="uid://duq3s73vqihes" path="res://Heart.png" id="2_x611m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v1ooj"]
+
+[node name="plt_player" type="CharacterBody2D"]
+script = ExtResource("1_tmopq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_x611m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_v1ooj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
